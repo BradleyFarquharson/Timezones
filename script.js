@@ -22,7 +22,6 @@ window.onload = function() {
                 timeZone: timeZone,
                 hour: '2-digit',
                 minute: '2-digit',
-                second: '2-digit', // Showing seconds
                 hour12: true
             });
             timeElement.textContent = currentTime;
