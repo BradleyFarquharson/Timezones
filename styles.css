@@ -17,28 +17,28 @@ body {
 .clock {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 5px;  /* Reduced margin between the boxes */
-    padding: 10px; /* Reduced padding inside the boxes */
+    padding: 8px;  /* Reduced padding inside the boxes */
     text-align: center;
-    width: 160px;  /* Smaller box width */
+    width: 120px;  /* Reduced width of each box */
 }
 
 h2 {
-    font-size: 1.2rem; /* Reduced font size */
+    font-size: 0.9rem; /* Smaller font size for titles */
     color: #333333;
-    margin: 5px 0; /* Less space above and below the title */
+    margin: 3px 0; /* Less space above and below the title */
 }
 
 .time {
-    font-size: 1rem; /* Reduced time font size */
+    font-size: 0.8rem; /* Smaller time font size */
     font-weight: bold;
     color: #555555;
-    margin-top: 5px; /* Less space between time and title */
+    margin-top: 3px; /* Less space between time and title */
 }
 
 .clock:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly smaller hover effect */
     transition: all 0.3s ease;
 }
