@@ -6,15 +6,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    flex-wrap: nowrap; /* Prevents the clocks from wrapping to the next line */
+    gap: 5px; /* Spacing between the clocks */
+    width: 100%; /* Make sure the container uses full width */
+    max-width: 700px; /* Limit total width to ensure it fits in Notion */
+    flex-wrap: nowrap; /* Ensure clocks stay in one row */
     overflow-x: auto; /* Allows horizontal scrolling if necessary */
 }
 
@@ -22,11 +24,11 @@ body {
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 5px;
+    margin: 0; /* Remove external margins */
     padding: 10px;
     text-align: center;
-    flex-shrink: 0; /* Ensures the clocks don't shrink if the container is too small */
-    width: 120px;  /* Width of each box */
+    width: 120px;  /* Fixed width for each clock */
+    flex-shrink: 0; /* Prevent clocks from shrinking */
 }
 
 h2 {
@@ -50,8 +52,8 @@ h2 {
 
 @media screen and (max-width: 600px) {
     .clock {
-        flex-basis: 100%; /* For small screens, clocks stack vertically */
-        max-width: 120px;
+        flex-basis: calc(100% / 2 - 10px); /* Adjust for small screens */
+        max-width: 100px; /* Make clocks smaller on smaller screens */
     }
 
     .time, h2 {
