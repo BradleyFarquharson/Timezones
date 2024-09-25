@@ -12,9 +12,10 @@ body {
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Ensures clocks wrap to fit smaller containers */
+    flex-direction: row;
     justify-content: center;
-    max-width: 100%; /* Container will adjust to the screen width */
+    flex-wrap: nowrap; /* Prevents the clocks from wrapping to the next line */
+    overflow-x: auto; /* Allows horizontal scrolling if necessary */
 }
 
 .clock {
@@ -24,18 +25,18 @@ body {
     margin: 5px;
     padding: 10px;
     text-align: center;
-    flex-basis: calc(100% / 5 - 10px); /* Ensure the clocks fit in a smaller container */
-    max-width: 150px; /* Limit max width to keep it small */
+    flex-shrink: 0; /* Ensures the clocks don't shrink if the container is too small */
+    width: 120px;  /* Width of each box */
 }
 
 h2 {
-    font-size: 0.9rem; /* Smaller title font size */
+    font-size: 0.9rem; /* Small title font size */
     color: #333333;
     margin: 3px 0;
 }
 
 .time {
-    font-size: 0.8rem; /* Smaller time font size */
+    font-size: 0.8rem; /* Small time font size */
     font-weight: bold;
     color: #555555;
     margin-top: 3px;
@@ -49,11 +50,11 @@ h2 {
 
 @media screen and (max-width: 600px) {
     .clock {
-        flex-basis: calc(100% / 2 - 10px); /* Adjusts to fit smaller screens */
+        flex-basis: 100%; /* For small screens, clocks stack vertically */
         max-width: 120px;
     }
 
     .time, h2 {
-        font-size: 0.7rem; /* Reduce font sizes further on very small screens */
+        font-size: 0.7rem;
     }
 }
