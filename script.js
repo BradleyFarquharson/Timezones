@@ -22,9 +22,9 @@ window.onload = function() {
                 timeZone: timeZone,
                 hour: '2-digit',
                 minute: '2-digit',
+                second: '2-digit', // Show seconds temporarily
                 hour12: true
             });
-            console.log(`Time in ${id}: ${currentTime}`); // Debugging line
             timeElement.textContent = currentTime;
         });
     }
