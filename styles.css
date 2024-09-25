@@ -1,62 +1,88 @@
+:root {
+    --background-color: #f0f0f5;
+    --clock-bg-color: #ffffff;
+    --text-color: #333333;
+    --time-color: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+    --font-family: 'Arial', sans-serif;
+    --transition-duration: 0.3s;
+    --clock-width: 120px;
+    --clock-padding: 10px;
+    --gap: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f5;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    box-sizing: border-box;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    gap: 5px; /* Spacing between the clocks */
-    width: 100%; /* Make sure the container uses full width */
-    max-width: 700px; /* Limit total width to ensure it fits in Notion */
-    flex-wrap: nowrap; /* Ensure clocks stay in one row */
-    overflow-x: auto; /* Allows horizontal scrolling if necessary */
+    gap: var(--gap);
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    padding: 20px;
 }
 
 .clock {
-    background-color: #ffffff;
+    background-color: var(--clock-bg-color);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0; /* Remove external margins */
-    padding: 10px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: var(--clock-padding);
     text-align: center;
-    width: 120px;  /* Fixed width for each clock */
-    flex-shrink: 0; /* Prevent clocks from shrinking */
-}
-
-h2 {
-    font-size: 0.9rem; /* Small title font size */
-    color: #333333;
-    margin: 3px 0;
-}
-
-.time {
-    font-size: 0.8rem; /* Small time font size */
-    font-weight: bold;
-    color: #555555;
-    margin-top: 3px;
+    width: var(--clock-width);
+    flex-shrink: 0;
+    transition: transform var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
 }
 
 .clock:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--hover-shadow-color);
     transform: scale(1.05);
-    transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 600px) {
+h2 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 5px 0;
+}
+
+.time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--time-color);
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
     .clock {
-        flex-basis: calc(100% / 2 - 10px); /* Adjust for small screens */
-        max-width: 100px; /* Make clocks smaller on smaller screens */
+        width: 45%;
     }
 
     .time, h2 {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .clock {
+        width: 100%;
+    }
+
+    .time, h2 {
+        font-size: 0.8rem;
     }
 }
