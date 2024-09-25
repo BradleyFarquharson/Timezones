@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Time Display</title>
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="clock" id="clock-south-africa">
+    <div class="container" role="list">
+        <div class="clock" id="clock-south-africa" role="listitem" aria-label="South Africa">
             <h2>South Africa</h2>
-            <div id="time-south-africa" class="time"></div>
+            <div id="time-south-africa" class="time" aria-live="polite"></div>
         </div>
 
-        <div class="clock" id="clock-sydney">
+        <div class="clock" id="clock-sydney" role="listitem" aria-label="Sydney">
             <h2>Sydney</h2>
-            <div id="time-sydney" class="time"></div>
+            <div id="time-sydney" class="time" aria-live="polite"></div>
         </div>
 
-        <div class="clock" id="clock-uk">
+        <div class="clock" id="clock-uk" role="listitem" aria-label="United Kingdom">
             <h2>United Kingdom</h2>
-            <div id="time-uk" class="time"></div>
+            <div id="time-uk" class="time" aria-live="polite"></div>
         </div>
 
-        <div class="clock" id="clock-us-central">
+        <div class="clock" id="clock-us-central" role="listitem" aria-label="United States">
             <h2>United States</h2>
-            <div id="time-us-central" class="time"></div>
+            <div id="time-us-central" class="time" aria-live="polite"></div>
         </div>
 
-        <div class="clock" id="clock-cyprus">
+        <div class="clock" id="clock-cyprus" role="listitem" aria-label="Cyprus">
             <h2>Cyprus</h2>
-            <div id="time-cyprus" class="time"></div>
+            <div id="time-cyprus" class="time" aria-live="polite"></div>
         </div>
     </div>
 
+    <!-- Link to external JavaScript -->
     <script src="script.js"></script>
 
 </body>
